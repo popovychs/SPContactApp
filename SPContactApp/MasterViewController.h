@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPCustomTableViewCell.h"
 
 @class DetailViewController;
 
@@ -14,6 +15,4 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-
 @end
-

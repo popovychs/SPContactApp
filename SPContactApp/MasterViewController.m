@@ -21,19 +21,22 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewContact:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
-    [super viewWillAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)createNewContact:(id)sender{
+    
+    [self insertNewObject:sender];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    DetailViewController *viewController = (DetailViewController *)[storyboard  instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    
+    [viewController setDetailItem:self.objects.lastObject];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)insertNewObject:(id)sender {
@@ -69,10 +72,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    SPCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.firstName.text = [object description];
+    cell.secondName.text = [object description];
     return cell;
 }
 
