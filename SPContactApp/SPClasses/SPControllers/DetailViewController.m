@@ -9,8 +9,6 @@
 #import "DetailViewController.h"
 #import "SPContactData.h"
 
-
-
 @interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic,strong) UIImagePickerController * imagePicker;
@@ -24,43 +22,11 @@
 - (IBAction)textFieldReturn:(UITextField*)sender;
 @property (nonatomic,strong )SPContactData* contactData;
 
-
-
 @end
 
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
-
-//- (void) setOrEditContact
-//{
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"contact.plist"];
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    
-//    NSMutableDictionary *data;
-//    
-//    if ([fileManager fileExistsAtPath: path]) {
-//        data = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-//    }
-//    else {
-//        // If the file doesn’t exist, create an empty dictionary
-//        data = [[NSMutableDictionary alloc] init];
-//    }
-//    
-//    //To insert the data into the plist
-//    data[@"value"] = @(5);
-//    
-//    [data writeToFile: path atomically:YES];
-//    
-//    //To reterive the data from the plist
-//    NSMutableDictionary *savedStock = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-//    int value1;
-//    value1 = [savedStock[@"value"] intValue];
-//    NSLog(@"%i",value1);
-//
-//}
 
 -(void)viewDidLoad{
     
@@ -77,7 +43,6 @@
 }
 
 - (IBAction)saveContactButton:(UIButton *)sender {
-    
    
     //To insert the data into the plist
     self.contactDataDictionary[SPFirstNameKey] = self.firstNameTextField.text;
@@ -93,8 +58,6 @@
     [navCon popToRootViewControllerAnimated:YES];
     
 }
-
-
 
 - (IBAction)onAddImageClicked:(id)sender {
     
@@ -136,21 +99,5 @@
     self.emailTextField.text=self.contactDataDictionary[SPEmailKey];
     
 }
-
-//- (void)setDetailItem:(id)newDetailItem {
-//    if (_detailItem != newDetailItem) {
-//        _detailItem = newDetailItem;
-//            
-//        // Update the view.
-//        [self configureView];
-//    }
-//}
-//
-//- (void)configureView {
-//    // Update the user interface for the detail item.
-//    if (self.detailItem) {
-//        self.detailDescriptionLabel.text = [self.detailItem description];
-//    }
-//}
 
 @end

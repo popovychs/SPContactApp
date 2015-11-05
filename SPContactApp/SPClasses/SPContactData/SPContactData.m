@@ -53,7 +53,6 @@ NSString * const SPContactImageKey = @"contactImage";
 
 -(void)addContactData:(NSMutableDictionary *)contactData{
    
-    
     //get present key
     NSString *presentID=contactData[SPContactIDKey];
     
@@ -116,7 +115,6 @@ NSString * const SPContactImageKey = @"contactImage";
     return loadedImage;
 }
 
-
 #pragma mark -
 #pragma mark remove file methods
 
@@ -134,20 +132,6 @@ NSString * const SPContactImageKey = @"contactImage";
         [[NSFileManager defaultManager] removeItemAtPath:pathPlist error:&error];
     
 }
-
-//-(NSArray *)listFileAtPath:(NSString *)path
-//{
-//    
-//    NSLog(@"LISTING ALL FILES FOUND");
-//    
-//    NSArray *directoryContent = [[NSFileManager defaultManager]contentsOfDirectoryAtPath:path error:nil];
-//    
-//    for (int count = 0; count < (int)[directoryContent count]; count++)
-//    {
-//        NSLog(@"File %d: %@", (count + 1), [directoryContent objectAtIndex:count]);
-//    }
-//    return directoryContent;
-//}
 
 #pragma mark -
 #pragma mark Supporting methods

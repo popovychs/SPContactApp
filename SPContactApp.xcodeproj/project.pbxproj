@@ -15,8 +15,9 @@
 		3E0BB9CE1BE7C9B2009FB3A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E0BB9CC1BE7C9B2009FB3A9 /* LaunchScreen.storyboard */; };
 		3E0BB9D71BE7D092009FB3A9 /* SPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BB9D61BE7D091009FB3A9 /* SPCustomTableViewCell.m */; };
 		3E3E031D1BEA1DDF00E8BB57 /* SPContactData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E031C1BEA1DDF00E8BB57 /* SPContactData.m */; };
-		3E3E03211BEA1E5500E8BB57 /* SPContactDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E03201BEA1E5500E8BB57 /* SPContactDetail.m */; };
 		3E7615FA1BEB6A29002F0AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7615F81BEB6A29002F0AF7 /* Main.storyboard */; };
+		3E7615FE1BEB8558002F0AF7 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7615FD1BEB8558002F0AF7 /* OptionViewController.m */; };
+		3E7616001BEB8C47002F0AF7 /* appleLogoWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7615FF1BEB8C47002F0AF7 /* appleLogoWhite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +36,10 @@
 		3E0BB9D61BE7D091009FB3A9 /* SPCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCustomTableViewCell.m; path = SPClasses/SPControllers/SPCustomTableViewCell.m; sourceTree = "<group>"; };
 		3E3E031B1BEA1DDF00E8BB57 /* SPContactData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContactData.h; sourceTree = "<group>"; };
 		3E3E031C1BEA1DDF00E8BB57 /* SPContactData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPContactData.m; sourceTree = "<group>"; };
-		3E3E031F1BEA1E5500E8BB57 /* SPContactDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContactDetail.h; sourceTree = "<group>"; };
-		3E3E03201BEA1E5500E8BB57 /* SPContactDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPContactDetail.m; sourceTree = "<group>"; };
 		3E7615F91BEB6A29002F0AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E7615FC1BEB8558002F0AF7 /* OptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionViewController.h; path = SPClasses/SPControllers/OptionViewController.h; sourceTree = "<group>"; };
+		3E7615FD1BEB8558002F0AF7 /* OptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionViewController.m; path = SPClasses/SPControllers/OptionViewController.m; sourceTree = "<group>"; };
+		3E7615FF1BEB8C47002F0AF7 /* appleLogoWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleLogoWhite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,6 @@
 			children = (
 				3E7615FB1BEB84CD002F0AF7 /* OptionViewController */,
 				3E3E031A1BEA1D6C00E8BB57 /* SPContactData */,
-				3E3E031E1BEA1DF300E8BB57 /* SPContactDetail */,
 				3E3E03221BEA1E7800E8BB57 /* AppDelegate */,
 				3E3E03241BEA1EA000E8BB57 /* DetailController */,
 				3E3E03231BEA1E8A00E8BB57 /* ViewController */,
@@ -80,6 +81,7 @@
 				3E0BB9CA1BE7C9B2009FB3A9 /* Assets.xcassets */,
 				3E0BB9CC1BE7C9B2009FB3A9 /* LaunchScreen.storyboard */,
 				3E7615F81BEB6A29002F0AF7 /* Main.storyboard */,
+				3E7615FF1BEB8C47002F0AF7 /* appleLogoWhite.png */,
 				3E0BB9CF1BE7C9B2009FB3A9 /* Info.plist */,
 				3E0BB9BB1BE7C9B2009FB3A9 /* Supporting Files */,
 			);
@@ -113,16 +115,6 @@
 			path = SPClasses/SPContactData;
 			sourceTree = "<group>";
 		};
-		3E3E031E1BEA1DF300E8BB57 /* SPContactDetail */ = {
-			isa = PBXGroup;
-			children = (
-				3E3E031F1BEA1E5500E8BB57 /* SPContactDetail.h */,
-				3E3E03201BEA1E5500E8BB57 /* SPContactDetail.m */,
-			);
-			name = SPContactDetail;
-			path = SPClasses/SPContactDetail;
-			sourceTree = "<group>";
-		};
 		3E3E03221BEA1E7800E8BB57 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +145,8 @@
 		3E7615FB1BEB84CD002F0AF7 /* OptionViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3E7615FC1BEB8558002F0AF7 /* OptionViewController.h */,
+				3E7615FD1BEB8558002F0AF7 /* OptionViewController.m */,
 			);
 			name = OptionViewController;
 			sourceTree = "<group>";
@@ -215,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7615FA1BEB6A29002F0AF7 /* Main.storyboard in Resources */,
+				3E7616001BEB8C47002F0AF7 /* appleLogoWhite.png in Resources */,
 				3E0BB9CE1BE7C9B2009FB3A9 /* LaunchScreen.storyboard in Resources */,
 				3E0BB9CB1BE7C9B2009FB3A9 /* Assets.xcassets in Resources */,
 			);
@@ -228,12 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0BB9C01BE7C9B2009FB3A9 /* AppDelegate.m in Sources */,
+				3E7615FE1BEB8558002F0AF7 /* OptionViewController.m in Sources */,
 				3E0BB9C31BE7C9B2009FB3A9 /* MasterViewController.m in Sources */,
 				3E0BB9BD1BE7C9B2009FB3A9 /* main.m in Sources */,
 				3E0BB9D71BE7D092009FB3A9 /* SPCustomTableViewCell.m in Sources */,
 				3E0BB9C61BE7C9B2009FB3A9 /* DetailViewController.m in Sources */,
 				3E3E031D1BEA1DDF00E8BB57 /* SPContactData.m in Sources */,
-				3E3E03211BEA1E5500E8BB57 /* SPContactDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
