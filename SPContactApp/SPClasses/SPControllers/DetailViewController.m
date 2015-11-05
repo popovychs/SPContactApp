@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveContactButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelFirstName;
+@property (weak, nonatomic) IBOutlet UILabel *labelSecondName;
+@property (weak, nonatomic) IBOutlet UILabel *labelPhoneNumber;
+@property (weak, nonatomic) IBOutlet UILabel *labelEmail;
+
 - (IBAction)textFieldReturn:(UITextField*)sender;
 @property (nonatomic,strong )SPContactData* contactData;
 
@@ -39,6 +44,20 @@
         self.contactDataDictionary=[[NSMutableDictionary alloc]init];
     }else
         [self setDetailData];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isWhiteOfBlackColorTheme"]) {
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.labelFirstName.textColor = [UIColor blueColor];
+        self.labelSecondName.textColor = [UIColor blueColor];
+        self.labelPhoneNumber.textColor =[UIColor blueColor];
+        self.labelEmail.textColor = [UIColor blueColor];
+    } else {
+        self.view.backgroundColor = [UIColor blackColor];
+        self.labelFirstName.textColor = [UIColor whiteColor];
+        self.labelSecondName.textColor = [UIColor whiteColor];
+        self.labelPhoneNumber.textColor =[UIColor whiteColor];
+        self.labelEmail.textColor = [UIColor whiteColor];
+    }
     
 }
 

@@ -9,11 +9,17 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "SPContactData.h"
+#import "OptionViewController.h"
+#import "SPCustomTableViewCell.h"
 
 @interface MasterViewController ()
 
 @property (nonatomic,strong )NSMutableArray *contacts;
 @property (nonatomic,strong )SPContactData* contactData;
+
+@property (nonatomic) BOOL * isFirstNameOrLastName;
+@property (nonatomic) BOOL * isWhiteOfBlackColorTheme;
+
 @end
 
 @implementation MasterViewController
@@ -21,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Contacts";
     
     self.contactData=[SPContactData getClassInstance];
     self.contacts=[self.contactData getData];
@@ -40,6 +47,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
 }
 
 
@@ -48,6 +56,11 @@
     self.contacts=[self.contactData getData];
     [self.tableView reloadData];
     
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isWhiteOfBlackColorTheme"]) {
+        super.view.backgroundColor = [UIColor whiteColor];
+    } else {
+        super.view.backgroundColor = [UIColor blackColor];
+    }
 }
 
 -(void)createNewContact:(id)sender{
@@ -62,7 +75,11 @@
 
 - (void) loadOption: (id) sender
 {
+    UIStoryboard * optionStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    OptionViewController * optionController = (OptionViewController *)[optionStoryboard instantiateViewControllerWithIdentifier:@"OptionViewController"];
+    
+    [self.navigationController pushViewController:optionController animated:YES];
 }
 
 #pragma mark - Segues
@@ -91,18 +108,33 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     SPCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
     NSMutableDictionary *contactDictionary=self.contacts[indexPath.row];
-    
-    
-    cell.firstName.text =contactDictionary[SPFirstNameKey];
-    cell.secondName.text = contactDictionary[SPSecondNameKey];
     
     UIImage *loadedImage =[self.contactData getImageFromDictionary:contactDictionary];
     cell.imageView.image = loadedImage;
     
+    cell.firstName.text =contactDictionary[SPFirstNameKey];
+    cell.secondName.text = contactDictionary[SPSecondNameKey];
+    
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isWhiteOfBlackColorTheme"]) {
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.firstName.textColor = [UIColor blueColor];
+        cell.secondName.textColor = [UIColor blueColor];
+    } else {
+        cell.backgroundColor = [UIColor blackColor];
+        cell.firstName.textColor = [UIColor whiteColor];
+        cell.secondName.textColor = [UIColor whiteColor];
+    }
     return cell;
 }
+
+//- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;

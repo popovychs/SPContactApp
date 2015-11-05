@@ -37,7 +37,7 @@
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="First Name:" lineBreakMode="tailTruncation" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
                                 <rect key="frame" x="20" y="340" width="125" height="24"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Second Name:" lineBreakMode="tailTruncation" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Xat-xG-0tj">
                                 <rect key="frame" x="20" y="382" width="125" height="23"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Phone Number:" lineBreakMode="tailTruncation" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-bb-b0V">
                                 <rect key="frame" x="20" y="423" width="125" height="23"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="E-mail:" lineBreakMode="tailTruncation" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="91w-li-YGA">
                                 <rect key="frame" x="20" y="464" width="125" height="23"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,6 +139,10 @@
                         <outlet property="contactImage" destination="3AG-ux-GmL" id="XdG-Rn-SzV"/>
                         <outlet property="emailTextField" destination="nX7-nH-YWl" id="YuT-IY-oLJ"/>
                         <outlet property="firstNameTextField" destination="vFR-vY-2r4" id="i2v-5Q-fbl"/>
+                        <outlet property="labelEmail" destination="91w-li-YGA" id="vIy-1B-Map"/>
+                        <outlet property="labelFirstName" destination="0XM-y9-sOw" id="Qgg-7o-f86"/>
+                        <outlet property="labelPhoneNumber" destination="LGa-bb-b0V" id="HXd-2V-95L"/>
+                        <outlet property="labelSecondName" destination="Xat-xG-0tj" id="et2-LB-mT2"/>
                         <outlet property="phoneNumberTextField" destination="hLg-ga-T9d" id="F8x-CX-RCT"/>
                         <outlet property="saveContactButton" destination="Knb-cW-aPp" id="tgI-Js-8gu"/>
                         <outlet property="secondNameTextField" destination="Uez-wc-cfG" id="hYz-yw-XaA"/>
@@ -234,27 +238,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-YI-oE7">
-                                <rect key="frame" x="184" y="90" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Black Theme                  White Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CST-go-74d">
+                                <rect key="frame" x="17" y="165" width="286" height="21"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CST-go-74d">
-                                <rect key="frame" x="31" y="75" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort by Name                       Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l83-pq-SIT">
+                                <rect key="frame" x="18" y="235" width="277" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCO-kd-1kn">
+                                <rect key="frame" x="140" y="160" width="51" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="colorSwitch:" destination="ocf-RT-1yn" eventType="valueChanged" id="rfY-sS-Dzn"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rux-N4-R9N">
+                                <rect key="frame" x="140" y="230" width="51" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sortSwitch:" destination="ocf-RT-1yn" eventType="valueChanged" id="Mbx-dM-Qdm"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="changeColorSwitch" destination="kCO-kd-1kn" id="K98-wz-1tg"/>
+                        <outlet property="labelNameSurname" destination="l83-pq-SIT" id="ifu-Nr-3Q8"/>
+                        <outlet property="labelWhiteBlack" destination="CST-go-74d" id="oKp-4I-Ino"/>
+                        <outlet property="sortSwitch" destination="Rux-N4-R9N" id="vZL-ui-Ci5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJq-PP-pLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="-630"/>
+            <point key="canvasLocation" x="796" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
