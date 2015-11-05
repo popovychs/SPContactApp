@@ -173,11 +173,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="gLS-vz-b34" customClass="SPCustomTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="gLS-vz-b34" customClass="SPCustomTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLS-vz-b34" id="Ztz-iq-1g8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="secondName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO1-GE-JK7">
@@ -206,6 +206,7 @@
                                     <outlet property="contactImage" destination="we4-Ha-eYL" id="Wvp-3D-CX5"/>
                                     <outlet property="firstName" destination="1Sd-pp-xcU" id="7v9-wb-la4"/>
                                     <outlet property="secondName" destination="zO1-GE-JK7" id="CnN-jk-JDh"/>
+                                    <segue destination="vC3-pB-5Vb" kind="show" identifier="showDetail" id="BNA-xZ-TCY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -225,6 +226,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yS9-j3-r7O"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -238,4 +240,7 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BNA-xZ-TCY"/>
+    </inferredMetricsTieBreakers>
 </document>

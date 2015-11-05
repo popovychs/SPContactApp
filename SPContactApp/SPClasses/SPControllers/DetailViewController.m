@@ -68,14 +68,17 @@
     self.imagePicker=[[UIImagePickerController alloc]init];
     
     self.contactData=[SPContactData getClassInstance];
+    
+    if (!self.contactDataDictionary) {
+        self.contactDataDictionary=[[NSMutableDictionary alloc]init];
+    }else
+        [self setDetailData];
+    
 }
 
 - (IBAction)saveContactButton:(UIButton *)sender {
     
-    if (!self.contactDataDictionary) {
-        self.contactDataDictionary=[[NSMutableDictionary alloc]init];
-    }
-    
+   
     //To insert the data into the plist
     self.contactDataDictionary[SPFirstNameKey] = self.firstNameTextField.text;
     self.contactDataDictionary[SPSecondNameKey] = self.secondNameTextField.text;
@@ -86,8 +89,13 @@
     
     [self.contactData addContactData:self.contactDataDictionary];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    UINavigationController* navCon=[self.splitViewController.viewControllers objectAtIndex:0];
+    [navCon popToRootViewControllerAnimated:YES];
+    
 }
+
+
+
 - (IBAction)onAddImageClicked:(id)sender {
     
     self.imagePicker.delegate = self;
@@ -116,6 +124,17 @@
 - (IBAction)textFieldReturn:(UITextField*)sender
 {
     [sender resignFirstResponder];
+}
+
+-(void)setDetailData{
+    UIImage* image=[self.contactData getImageFromDictionary:self.contactDataDictionary];
+    self.contactImage.image=image;
+    
+    self.firstNameTextField.text=self.contactDataDictionary[SPFirstNameKey];
+    self.secondNameTextField.text=self.contactDataDictionary[SPSecondNameKey];
+    self.phoneNumberTextField.text=self.contactDataDictionary[SPPhoneNumberKey];
+    self.emailTextField.text=self.contactDataDictionary[SPEmailKey];
+    
 }
 
 //- (void)setDetailItem:(id)newDetailItem {

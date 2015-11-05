@@ -8,14 +8,13 @@
 
 #import "SPContactData.h"
 
-NSString * const SPContactImageKey = @"contactImage";
 NSString * const SPFirstNameKey = @"firstName";
 NSString * const SPSecondNameKey = @"secondName";
 NSString * const SPPhoneNumberKey = @"phoneNumber";
 NSString * const SPEmailKey = @"email";
 
 NSString * const SPContactIDKey = @"contactID";
-NSString * const SPImageIDKey = @"imageID";
+NSString * const SPContactImageKey = @"contactImage";
 
 @implementation SPContactData
 
@@ -115,6 +114,25 @@ NSString * const SPImageIDKey = @"imageID";
     NSString * pathImage=[imageFolderPath stringByAppendingPathComponent:contactData[SPContactImageKey]];
     UIImage *loadedImage =[UIImage imageWithContentsOfFile:pathImage];
     return loadedImage;
+}
+
+
+#pragma mark -
+#pragma mark remove file methods
+
+-(void)removeDataWithDictionary:(NSMutableDictionary *)contactDictionary{
+    NSError* error;
+    
+    NSString* imageID=contactDictionary[SPContactImageKey];
+    NSString *pathImage = [[self getImageFolderPath] stringByAppendingPathComponent:imageID];
+    if (imageID)
+    [[NSFileManager defaultManager] removeItemAtPath:pathImage error:&error];
+    
+    NSString* plistID=contactDictionary[SPContactIDKey];
+    NSString *pathPlist = [[self getContactFolderPath] stringByAppendingPathComponent:plistID];
+    if (plistID)
+        [[NSFileManager defaultManager] removeItemAtPath:pathPlist error:&error];
+    
 }
 
 //-(NSArray *)listFileAtPath:(NSString *)path

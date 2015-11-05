@@ -28,4 +28,7 @@ extern NSString * const SPImageIDKey;
 
 -(NSMutableArray*)getData;
 -(UIImage*)getImageFromDictionary:(NSMutableDictionary*)contactData;
+
+-(void)removeDataWithDictionary:(NSMutableDictionary*)contactDictionary;
+
 @end
