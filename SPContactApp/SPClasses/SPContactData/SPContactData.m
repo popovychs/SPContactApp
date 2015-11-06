@@ -104,7 +104,6 @@ NSString * const SPContactImageKey = @"contactImage";
         }
     }
     
-    //NSLog(@"dictionariesWithContactData : %@",[dictionariesWithContactData description]);
     return [self sortArray:dictionariesWithContactData];
 }
 
@@ -152,6 +151,7 @@ NSString * const SPContactImageKey = @"contactImage";
 -(NSMutableArray*)sortArray:(NSMutableArray*)array{
     NSSortDescriptor* descriptorByName=[[NSSortDescriptor alloc]initWithKey:SPFirstNameKey ascending:YES];
     NSSortDescriptor* descriptorBySurname=[[NSSortDescriptor alloc]initWithKey:SPSecondNameKey ascending:YES];
+    
     NSArray* descriptors;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstNameOrLastName"])
         descriptors=@[descriptorByName,descriptorBySurname];

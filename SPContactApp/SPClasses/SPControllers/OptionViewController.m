@@ -55,7 +55,6 @@
         self.view.backgroundColor = [UIColor whiteColor];
         _labelWhiteBlack.textColor = [UIColor blackColor];
         _labelNameSurname.textColor = [UIColor blackColor];
-        
         [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
         
         
