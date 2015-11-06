@@ -104,8 +104,8 @@ NSString * const SPContactImageKey = @"contactImage";
         }
     }
     
-    NSLog(@"dictionariesWithContactData : %@",[dictionariesWithContactData description]);
-    return dictionariesWithContactData;
+    //NSLog(@"dictionariesWithContactData : %@",[dictionariesWithContactData description]);
+    return [self sortArray:dictionariesWithContactData];
 }
 
 -(UIImage *)getImageFromDictionary:(NSMutableDictionary *)contactData{
@@ -148,5 +148,19 @@ NSString * const SPContactImageKey = @"contactImage";
     NSString * imageFolderPath = [dataPath stringByAppendingPathComponent:@"/ImageData"];
     return imageFolderPath;
 }
+
+-(NSMutableArray*)sortArray:(NSMutableArray*)array{
+    NSSortDescriptor* descriptorByName=[[NSSortDescriptor alloc]initWithKey:SPFirstNameKey ascending:YES];
+    NSSortDescriptor* descriptorBySurname=[[NSSortDescriptor alloc]initWithKey:SPSecondNameKey ascending:YES];
+    NSArray* descriptors;
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstNameOrLastName"])
+        descriptors=@[descriptorByName,descriptorBySurname];
+    else
+         descriptors=@[descriptorBySurname,descriptorByName];
+    NSArray* sortedArray=[array sortedArrayUsingDescriptors:descriptors];
+    NSMutableArray* arr=[[NSMutableArray alloc]initWithArray:sortedArray];
+    return arr;
+}
+
 
 @end

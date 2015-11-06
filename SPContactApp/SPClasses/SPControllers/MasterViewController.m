@@ -58,8 +58,10 @@
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isWhiteOfBlackColorTheme"]) {
         super.view.backgroundColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     } else {
         super.view.backgroundColor = [UIColor blackColor];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
 }
 

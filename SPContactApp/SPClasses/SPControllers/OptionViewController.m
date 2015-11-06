@@ -7,6 +7,7 @@
 //
 
 #import "OptionViewController.h"
+#import "AppDelegate.h"
 
 @interface OptionViewController ()
 
@@ -54,10 +55,15 @@
         self.view.backgroundColor = [UIColor whiteColor];
         _labelWhiteBlack.textColor = [UIColor blackColor];
         _labelNameSurname.textColor = [UIColor blackColor];
+        
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
+        
+        
     } else {
         self.view.backgroundColor = [UIColor blackColor];
         _labelWhiteBlack.textColor = [UIColor whiteColor];
         _labelNameSurname.textColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
 }
 

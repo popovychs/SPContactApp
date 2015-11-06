@@ -30,7 +30,6 @@
     splitViewController.delegate = self;
     [self.window makeKeyAndVisible];
     
-    [[UINavigationBar appearance]setBarTintColor :[UIColor blackColor]];
     [self appRun];
     
     return YES;
@@ -60,6 +59,7 @@
     if (![userDefaults boolForKey:@"firstRun"]) {
         [userDefaults setBool:YES forKey:@"isFirstNameOrLastName"];
         [userDefaults setBool:NO forKey:@"isWhiteOfBlackColorTheme"];
+        [userDefaults setBool:YES forKey:@"firstRun"];
     }
 }
 

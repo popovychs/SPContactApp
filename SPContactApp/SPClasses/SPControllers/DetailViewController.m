@@ -51,13 +51,16 @@
         self.labelSecondName.textColor = [UIColor blueColor];
         self.labelPhoneNumber.textColor =[UIColor blueColor];
         self.labelEmail.textColor = [UIColor blueColor];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     } else {
         self.view.backgroundColor = [UIColor blackColor];
         self.labelFirstName.textColor = [UIColor whiteColor];
         self.labelSecondName.textColor = [UIColor whiteColor];
         self.labelPhoneNumber.textColor =[UIColor whiteColor];
         self.labelEmail.textColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
+    self.title = @"Details";
     
 }
 
