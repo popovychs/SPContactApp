@@ -69,21 +69,11 @@
     
     self.navigationItem.rightBarButtonItem = cameraButton;
     
-    [self checkCamera];
     
 }
 
 -(void)openCamera:(id)sender{
     
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
--(void)checkCamera{
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertController * alert=   [UIAlertController
@@ -102,16 +92,17 @@
         
         [self.navigationItem.rightBarButtonItem setEnabled:NO];
         
-//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-//                                                              message:@"Device has no camera"
-//                                                             delegate:nil
-//                                                    cancelButtonTitle:@"OK"
-//                                                    otherButtonTitles: nil];
-//        
-//        [myAlertView show];
-        
+        return;
     }
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
 }
+
 
 - (IBAction)saveContactButton:(UIButton *)sender {
    
