@@ -62,6 +62,55 @@
     }
     self.title = @"Details";
     
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
+                                  target:self
+                                  action:@selector(openCamera:)];
+    
+    self.navigationItem.rightBarButtonItem = cameraButton;
+    
+    [self checkCamera];
+    
+}
+
+-(void)openCamera:(id)sender{
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+-(void)checkCamera{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Error"
+                                      message:@"Device has no camera"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* showAlert = [UIAlertAction
+                                    actionWithTitle:@"Ok"
+                                    style:UIAlertActionStyleDefault
+                                    handler:nil];
+        
+        [alert addAction:showAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+        
+//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                              message:@"Device has no camera"
+//                                                             delegate:nil
+//                                                    cancelButtonTitle:@"OK"
+//                                                    otherButtonTitles: nil];
+//        
+//        [myAlertView show];
+        
+    }
 }
 
 - (IBAction)saveContactButton:(UIButton *)sender {

@@ -63,6 +63,7 @@
         super.view.backgroundColor = [UIColor blackColor];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
+    
 }
 
 -(void)createNewContact:(id)sender{
@@ -134,10 +135,6 @@
     return cell;
 }
 
-//- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -154,6 +151,15 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
 
 @end

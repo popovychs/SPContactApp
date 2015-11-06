@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E03AB0E1BECD716009665DE /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E03AB0D1BECD716009665DE /* SPNavigationController.m */; };
 		3E0BB9BD1BE7C9B2009FB3A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BB9BC1BE7C9B2009FB3A9 /* main.m */; };
 		3E0BB9C01BE7C9B2009FB3A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BB9BF1BE7C9B2009FB3A9 /* AppDelegate.m */; };
 		3E0BB9C31BE7C9B2009FB3A9 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BB9C21BE7C9B2009FB3A9 /* MasterViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E03AB0C1BECD716009665DE /* SPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNavigationController.h; path = SPClasses/SPControllers/SPNavigationController.h; sourceTree = "<group>"; };
+		3E03AB0D1BECD716009665DE /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNavigationController.m; path = SPClasses/SPControllers/SPNavigationController.m; sourceTree = "<group>"; };
 		3E0BB9B81BE7C9B2009FB3A9 /* SPContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0BB9BC1BE7C9B2009FB3A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E0BB9BE1BE7C9B2009FB3A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				3E7615FF1BEB8C47002F0AF7 /* appleLogoWhite.png */,
 				3E0BB9CF1BE7C9B2009FB3A9 /* Info.plist */,
 				3E0BB9BB1BE7C9B2009FB3A9 /* Supporting Files */,
+				3E03AB0C1BECD716009665DE /* SPNavigationController.h */,
+				3E03AB0D1BECD716009665DE /* SPNavigationController.m */,
 			);
 			path = SPContactApp;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			files = (
 				3E0BB9C01BE7C9B2009FB3A9 /* AppDelegate.m in Sources */,
 				3E7615FE1BEB8558002F0AF7 /* OptionViewController.m in Sources */,
+				3E03AB0E1BECD716009665DE /* SPNavigationController.m in Sources */,
 				3E0BB9C31BE7C9B2009FB3A9 /* MasterViewController.m in Sources */,
 				3E0BB9BD1BE7C9B2009FB3A9 /* main.m in Sources */,
 				3E0BB9D71BE7D092009FB3A9 /* SPCustomTableViewCell.m in Sources */,
