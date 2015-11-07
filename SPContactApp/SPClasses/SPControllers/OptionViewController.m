@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelWhiteBlack;
 @property (weak, nonatomic) IBOutlet UILabel *labelNameSurname;
 
-
 @end
 
 @implementation OptionViewController
@@ -57,14 +56,13 @@
         _labelNameSurname.textColor = [UIColor blackColor];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
         
-        
     } else {
+        
         self.view.backgroundColor = [UIColor blackColor];
         _labelWhiteBlack.textColor = [UIColor whiteColor];
         _labelNameSurname.textColor = [UIColor whiteColor];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
 }
-
 
 @end

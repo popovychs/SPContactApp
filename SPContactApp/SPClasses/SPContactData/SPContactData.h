@@ -25,7 +25,6 @@ extern NSString * const SPImageIDKey;
 -(void)addContactData:(NSMutableDictionary*)contactData;
 -(void)addImage:(UIImage *)imageOfContact WithContactData:(NSMutableDictionary* )contactData;
 
-
 -(NSMutableArray*)getData;
 -(UIImage*)getImageFromDictionary:(NSMutableDictionary*)contactData;
 

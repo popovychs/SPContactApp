@@ -15,14 +15,7 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    //[self.window setTintColor:[UIColor whiteColor]];
-    //[self.window setBackgroundColor:[UIColor blackColor]];
-    
-    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];

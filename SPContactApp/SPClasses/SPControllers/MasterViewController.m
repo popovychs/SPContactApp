@@ -47,7 +47,6 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
 }
 
 
@@ -59,7 +58,9 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isWhiteOfBlackColorTheme"]) {
         super.view.backgroundColor = [UIColor whiteColor];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
+        
     } else {
+        
         super.view.backgroundColor = [UIColor blackColor];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     }
@@ -67,7 +68,6 @@
 }
 
 -(void)createNewContact:(id)sender{
-    
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
@@ -127,7 +127,9 @@
         cell.backgroundColor = [UIColor whiteColor];
         cell.firstName.textColor = [UIColor blueColor];
         cell.secondName.textColor = [UIColor blueColor];
+        
     } else {
+        
         cell.backgroundColor = [UIColor blackColor];
         cell.firstName.textColor = [UIColor whiteColor];
         cell.secondName.textColor = [UIColor whiteColor];
@@ -152,6 +154,5 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
 
 @end

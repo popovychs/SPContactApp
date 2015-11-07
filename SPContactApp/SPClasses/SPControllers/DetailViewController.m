@@ -69,7 +69,6 @@
     
     self.navigationItem.rightBarButtonItem = cameraButton;
     
-    
 }
 
 -(void)openCamera:(id)sender{
@@ -159,7 +158,6 @@
     self.secondNameTextField.text=self.contactDataDictionary[SPSecondNameKey];
     self.phoneNumberTextField.text=self.contactDataDictionary[SPPhoneNumberKey];
     self.emailTextField.text=self.contactDataDictionary[SPEmailKey];
-    
 }
 
 @end

@@ -59,6 +59,7 @@ NSString * const SPContactImageKey = @"contactImage";
     if (presentID) {
         NSString *pathPlist = [[self getContactFolderPath] stringByAppendingPathComponent:presentID];
         [contactData writeToFile:pathPlist atomically:YES];
+        
     }else{
         
     NSString *ID =[[NSUUID new] UUIDString] ;
@@ -129,7 +130,6 @@ NSString * const SPContactImageKey = @"contactImage";
     NSString *pathPlist = [[self getContactFolderPath] stringByAppendingPathComponent:plistID];
     if (plistID)
         [[NSFileManager defaultManager] removeItemAtPath:pathPlist error:&error];
-    
 }
 
 #pragma mark -
@@ -155,12 +155,13 @@ NSString * const SPContactImageKey = @"contactImage";
     NSArray* descriptors;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstNameOrLastName"])
         descriptors=@[descriptorByName,descriptorBySurname];
+    
     else
+        
          descriptors=@[descriptorBySurname,descriptorByName];
     NSArray* sortedArray=[array sortedArrayUsingDescriptors:descriptors];
     NSMutableArray* arr=[[NSMutableArray alloc]initWithArray:sortedArray];
     return arr;
 }
-
 
 @end
